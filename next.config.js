@@ -1,4 +1,12 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
+const withNextra = require("nextra")({
+  theme: "nextra-theme-docs",
+  themeConfig: "./theme.config.tsx",
+});
 
-module.exports = nextConfig
+module.exports = withNextra({
+  i18n: {
+    locales: ["en", "de"],
+    defaultLocale: "en",
+  },
+  trailingSlash: true,
+});
